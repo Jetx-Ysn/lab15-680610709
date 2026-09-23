@@ -49,7 +49,7 @@ export function RegisterDialog({ onRegister }: RegisterDialogProps) {
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       {/* ปุ่มที่กดแล้วเปิด Dialog */}
-      <DialogTrigger asChild>
+      <DialogTrigger>
         <Button>ลงทะเบียน</Button>
       </DialogTrigger>
 
