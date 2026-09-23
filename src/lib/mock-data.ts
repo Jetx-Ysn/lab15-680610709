@@ -8,9 +8,9 @@ export const students: Student[] = [
     program: "CPE",
   },
   {
-    studentId: "650610002",
-    firstName: "Cillian",
-    lastName: "Murphy",
+    studentId: "680610709",
+    firstName: "Yotsanon",
+    lastName: "Aimsamaoh",
     program: "CPE",
     courses: ["261207", "261497"],
   },
@@ -65,15 +65,15 @@ export const enrollments: Enrollment[] = [
   },
 ];
 
-// นักศึกษาที่ "ล็อกอินอยู่" — ไม่มีระบบ Login/Role ในแลปนี้ จึงกำหนดไว้ที่นี่ที่เดียว
-export const CURRENT_STUDENT_ID = "650610002";
-export const currentStudent = students.find(
+export const CURRENT_STUDENT_ID = "680610709";
+
+const foundStudent = students.find(
   (s) => s.studentId === CURRENT_STUDENT_ID,
 )!;
 
-// ข้อมูลส่วนแสดงสถานะผู้ใช้ที่ Sidebar (ข้อ 5 ของโจทย์) — แก้เป็นชื่อเล่นและรูปของตัวเอง
-export const currentUser = {
-  nickname: "Cillian",
+export const currentStudent = {
+  ...foundStudent,
+  nickname: "Jet", // ชื่อเล่นของคุณ
   role: "STUDENT" as "STUDENT" | "ADMIN",
-  avatar: "/profile.svg", // วางรูปไว้ที่ public/
+  avatar: "/avatar.JPG", // รูปภาพในโฟลเดอร์ public
 };
